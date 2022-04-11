@@ -1,38 +1,88 @@
+body {
+  background-color: rgb(22, 22, 22);
+}
+
+p {
+  font-size: 1.3em;
+}
+
 .App {
   text-align: center;
+  margin-top: 20vh;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#card, #thanks {
+  width: 400px;
+  background-color: rgb(44, 44, 44);
+  height: 400px;
+  margin: auto;
+  position: relative;
+  display: block;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.numbers {
+  background-color: gray;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
   color: white;
+  margin: 10px;
+  display: inline-block;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.numbers:hover {
+  background-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit button {
+  background-color: orangered;
+  border-radius: 50px;
+  padding: 10px;
+  width: 200px;
+  color: white;
+  font-size: 1.3em;
+  border: none;
+  margin-top: 20px;
 }
+
+.submit button:hover {
+  background: darkorange;
+}
+
+#cardContents {
+  padding-top: 65px;
+  color: rgb(242, 242, 242);
+}
+
+#thanks {
+  z-index: 3;
+  position: fixed;
+  margin-top: -62vh;
+  height: 600px;
+}
+
+#thanks h1 {
+  font-size: 1.8em;
+  padding: 40px;
+}
+
+img {
+  padding-top: 130px;
+  padding-bottom: 40px;
+  height: 100px;
+  width: 130px;
+}
+
+.rating {
+  padding: 10px; 
+  background:rgb(30, 30, 30);
+  border-radius: 40px;
+  width: 300px;
+  margin: auto;
+}
+
+
