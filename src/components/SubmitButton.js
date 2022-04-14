@@ -14,7 +14,7 @@ const SubmitButton = ({ value }) => {
       >
         Submit
       </button>
-      {value && state ? <ThanksPage value={value} /> : null};
+      {value && state ? <ThanksPage value={value} /> : null}
     </div>
   );
 };

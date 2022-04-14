@@ -10,7 +10,7 @@ const RatingsCard = () => {
       <div id="cardContents">
         <h1>How Did We Do?</h1>
         <p>Please leave us a like</p>
-        <RatingNumbers setValue={setValue} />
+        <RatingNumbers setValue={setValue} value={value} />
         <SubmitButton value={value} />
       </div>
     </div>
