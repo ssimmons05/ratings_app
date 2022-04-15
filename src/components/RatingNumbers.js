@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 
-const RatingNumbers = ({ setValue, value }) => {
-  // const [color, setColor] = useState("gray");
-  const numbers = [1, 2, 3, 4, 5];
-  const handleOnClick = (e) => {
-    setValue(e.target.innerText);
-    // if (value) {
-    //   setColor("green");
-    // }
-    // document.querySelector(".numbers").style.background = "green";
+const RatingNumbers = ({ setValue, value, number }) => {
+  const [color, setColors] = useState("");
+  const [active, setActive] = useState(false);
+
+  const handleClickButton = ({ number }) => {
+    setActive(true);
+    setColors(number.id);
+    setValue(number.num);
+    if (active) {
+      setActive(false);
+      setColors("");
+      setValue(null);
+    } else {
+      setActive(true);
+      setColors(number.id);
+    }
   };
-  const displayNumbers = numbers.map((number, index) => {
-    return (
-      <button
-        id={index}
-        key={index}
-        onClick={(e) => {
-          handleOnClick(e);
-        }}
-        className="numbers"
-      >
-        {number}
-      </button>
-    );
-  });
-  return <div>{displayNumbers}</div>;
+
+  return (
+    <button
+      className={`button ${color}`}
+      onClick={() => handleClickButton({ number })}
+    >
+      {number.num}
+    </button>
+  );
 };
 
 export default RatingNumbers;

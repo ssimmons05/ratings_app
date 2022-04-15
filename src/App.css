@@ -22,7 +22,7 @@ p {
   border-radius: 20px;
 }
 
-.numbers {
+.button {
   background-color: gray;
   padding: 10px;
   width: 40px;
@@ -34,7 +34,7 @@ p {
   border: none;
 }
 
-.numbers:hover {
+.button:hover {
   background-color: red;
 }
 
@@ -83,6 +83,10 @@ img {
   border-radius: 40px;
   width: 300px;
   margin: auto;
+}
+
+.one, .two, .three, .four, .five {
+  background: red;
 }
 
 
