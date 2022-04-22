@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RatingNumbers from "./RatingNumbers";
 import SubmitButton from "./SubmitButton";
 
-const RatingsCard = ({ number }) => {
+const RatingsCard = () => {
   const [rating, setRating] = useState("");
   const [numbers, setNumbers] = useState([
     { value: 1, active: false },
@@ -11,6 +11,7 @@ const RatingsCard = ({ number }) => {
     { value: 4, active: false },
     { value: 5, active: false },
   ]);
+
   const handleClickButton = (value) => {
     for (let i = 0; i < numbers.length; i++) {
       if (numbers[i].active) {
@@ -23,6 +24,7 @@ const RatingsCard = ({ number }) => {
     setRating(value);
     setNumbers(numbers);
   };
+
   return (
     <div id="card">
       <div id="cardContents">

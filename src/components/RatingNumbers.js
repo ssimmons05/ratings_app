@@ -8,7 +8,7 @@ const RatingNumbers = ({ number, handleClickButton }) => {
       className={active ? "button active" : "button"}
       onClick={() => handleClickButton(value)}
     >
-      {number.value}
+      {value}
     </button>
   );
 };
