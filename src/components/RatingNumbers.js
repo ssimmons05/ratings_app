@@ -1,29 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-const RatingNumbers = ({ setValue, value, number }) => {
-  const [color, setColors] = useState("");
-  const [active, setActive] = useState(false);
-
-  const handleClickButton = ({ number }) => {
-    setActive(true);
-    setColors(number.id);
-    setValue(number.num);
-    if (active) {
-      setActive(false);
-      setColors("");
-      setValue(null);
-    } else {
-      setActive(true);
-      setColors(number.id);
-    }
-  };
+const RatingNumbers = ({ number, handleClickButton }) => {
+  const { active, value } = number;
 
   return (
     <button
-      className={`button ${color}`}
-      onClick={() => handleClickButton({ number })}
+      className={active ? "button active" : "button"}
+      onClick={() => handleClickButton(value)}
     >
-      {number.num}
+      {number.value}
     </button>
   );
 };

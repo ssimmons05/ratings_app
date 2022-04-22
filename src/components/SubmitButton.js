@@ -7,6 +7,7 @@ const SubmitButton = ({ value }) => {
   return (
     <div className="submit">
       <button
+        id="clickedButton"
         onClick={() => {
           setState(!state);
         }}

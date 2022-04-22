@@ -3,15 +3,26 @@ import RatingNumbers from "./RatingNumbers";
 import SubmitButton from "./SubmitButton";
 
 const RatingsCard = ({ number }) => {
-  const [value, setValue] = useState("");
-  const numbers = [
-    { num: 1, id: "one" },
-    { num: 2, id: "two" },
-    { num: 3, id: "three" },
-    { num: 4, id: "four" },
-    { num: 5, id: "five" },
-  ];
-
+  const [rating, setRating] = useState("");
+  const [numbers, setNumbers] = useState([
+    { value: 1, active: false },
+    { value: 2, active: false },
+    { value: 3, active: false },
+    { value: 4, active: false },
+    { value: 5, active: false },
+  ]);
+  const handleClickButton = (value) => {
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i].active) {
+        numbers[i].active = false;
+      }
+      if (numbers[i].value === value) {
+        numbers[i].active = true;
+      }
+    }
+    setRating(value);
+    setNumbers(numbers);
+  };
   return (
     <div id="card">
       <div id="cardContents">
@@ -21,15 +32,14 @@ const RatingsCard = ({ number }) => {
         <div className="container">
           {numbers.map((number) => (
             <RatingNumbers
-              key={number}
+              key={number.value}
               number={number}
-              setValue={setValue}
-              value={value}
+              handleClickButton={handleClickButton}
             />
           ))}
         </div>
 
-        <SubmitButton value={value} />
+        <SubmitButton value={rating} />
       </div>
     </div>
   );
